@@ -3,7 +3,6 @@ import "@/styles/global.css"
 import { SEO } from "astro-seo"
 import { ClientRouter } from "astro:transitions"
 import { optimizeRemoteImageUrl } from "@/config/assets"
-import { FEATURES } from "@/config/features"
 import { LOCALES, getLocaleMeta, type Locale } from "@/config/locales"
 import { SITE_CONFIG } from "@/config/site"
 import { buildAlternates, canonicalUrl } from "@/utils/routes"
@@ -11,7 +10,6 @@ import { webPageJsonLd, webSiteJsonLd } from "@/utils/structured-data"
 import Header from "@/components/ui/Header.astro"
 import Footer from "@/components/ui/Footer.astro"
 import DynamicGlass from "@/components/features/DynamicGlass.astro"
-import Analytics from "@/components/features/Analytics.astro"
 
 interface Props {
   lang: Locale
@@ -119,7 +117,7 @@ const alternateOgLocales = LOCALES.filter((locale) => locale !== lang).map(
         imageAlt: pageTitle,
       }}
     />
-    {FEATURES.viewTransitions && <ClientRouter fallback="swap" />}
+    <ClientRouter fallback="swap" />
     <script is:inline>
       ;(() => {
         const theme = localStorage.getItem("theme") || "system"
@@ -137,7 +135,6 @@ const alternateOgLocales = LOCALES.filter((locale) => locale !== lang).map(
       type="application/ld+json"
       set:html={JSON.stringify(jsonLdItems)}
     />
-    <Analytics />
   </head>
   <body>
     <Header lang={lang} path={path} />

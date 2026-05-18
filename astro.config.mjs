@@ -1,6 +1,5 @@
 import expressiveCode from "astro-expressive-code"
 import mdx from "@astrojs/mdx"
-import partytown from "@astrojs/partytown"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import pagefind from "astro-pagefind"
@@ -16,8 +15,6 @@ const assetHost = (() => {
     return undefined
   }
 })()
-
-const googleAnalyticsId = process.env.PUBLIC_GOOGLE_ANALYTICS_ID
 
 export default defineConfig({
   output: "static",
@@ -72,15 +69,6 @@ export default defineConfig({
         ],
       },
     }),
-    ...(googleAnalyticsId
-      ? [
-          partytown({
-            config: {
-              forward: ["dataLayer.push"],
-            },
-          }),
-        ]
-      : []),
     expressiveCode({
       themes: ["github-dark", "github-light"],
       themeCssSelector: (theme) => (theme.type === "dark" ? ".dark" : ""),

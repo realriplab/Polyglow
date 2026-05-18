@@ -3,7 +3,7 @@ slug: default
 name: "Polyglow Editorial"
 bio: "Notes on building, investing, technology, and durable content systems."
 socials:
-  - { label: "GitHub", url: "https://github.com/realriplab/Polyglow-next" }
+  - { label: "GitHub", url: "https://github.com/realriplab/Polyglow" }
   - { label: "Website", url: "/en/" }
   - { label: "RSS", url: "/en/rss.xml" }
 locale: en

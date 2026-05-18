@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   ).replace(/\/$/, ""),
   description:
     "A multilingual Astro content site with glassmorphism cards and static publishing.",
-  repository: "https://github.com/realriplab/Polyglow-next",
+  repository: "https://github.com/realriplab/Polyglow",
   social: {
     x: "https://x.com/idimilabs",
   },
